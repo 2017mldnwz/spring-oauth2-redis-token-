@@ -15,13 +15,6 @@ import io.jsonwebtoken.Jwts;
 @RestController
 public class UserController {
 
-    @GetMapping("/index")
-    public Object index(@AuthenticationPrincipal Authentication authentication,HttpServletRequest request){
-    	String header = request.getHeader("Authorization");
-        String token = StringUtils.substringAfter(header, "bearer ");
-        return Jwts.parser().setSigningKey("test_key".getBytes(StandardCharsets.UTF_8)).parseClaimsJws(token).getBody();
-    }
-    
     @GetMapping("/index1")
     public Object index1() {
     	return "访问成功！";
