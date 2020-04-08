@@ -41,7 +41,7 @@ public class AuthorizationServerConfig1 extends AuthorizationServerConfigurerAda
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints.authenticationManager(authenticationManager)
         		.tokenStore(redisTokenStore)
-                .userDetailsService(userDetailService);
+                .userDetailsService(userDetailService);  //账号密码
     }
     
     @Override
